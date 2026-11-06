@@ -1,0 +1,21 @@
+{
+  "name": "foodie-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Foodie Online Food Ordering Website",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["mern", "food-ordering", "express", "mongodb"],
+  "author": "Foodie Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.1",
+    "morgan": "^1.10.0"
+  }
+}

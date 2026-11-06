@@ -1,0 +1,22 @@
+{
+  "name": "foodie-mern-stack",
+  "version": "1.0.0",
+  "description": "Foodie - Online Food Ordering Website (MERN Stack)",
+  "scripts": {
+    "start": "node backend/server.js",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "food-ordering",
+    "tailwind"
+  ],
+  "author": "Foodie Team",
+  "license": "ISC"
+}

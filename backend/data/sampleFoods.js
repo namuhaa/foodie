@@ -1,0 +1,327 @@
+const sampleFoods = [
+  // Burger
+  {
+    name: "Classic Cheeseburger",
+    description: "Juicy beef patty topped with melted cheddar, crisp lettuce, ripe tomatoes, pickles, and our signature secret sauce on a toasted brioche bun.",
+    price: 8.99,
+    category: "Burger",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "15-20 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Bestseller", "Chef Special"]
+  },
+  {
+    name: "Smoky BBQ Bacon Burger",
+    description: "Double smashed beef patties, applewood smoked bacon, crispy onion rings, and tangy honey BBQ sauce.",
+    price: 11.49,
+    category: "Burger",
+    image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "20-25 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Popular"]
+  },
+  {
+    name: "Crispy Peri-Peri Chicken Burger",
+    description: "Golden fried chicken breast coated in spicy peri-peri seasoning with creamy ranch slaw.",
+    price: 9.99,
+    category: "Burger",
+    image: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    prepTime: "15-20 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Spicy"]
+  },
+  {
+    name: "Truffle Veggie Supreme Burger",
+    description: "Handcrafted black bean & quinoa patty, melted Swiss cheese, truffle aioli, and baby arugula.",
+    price: 9.49,
+    category: "Burger",
+    image: "https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=800&q=80",
+    rating: 4.6,
+    prepTime: "15-20 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Vegetarian"]
+  },
+
+  // Pizza
+  {
+    name: "Margherita Gourmet Pizza",
+    description: "San Marzano tomato base, fresh buffalo mozzarella, fragrant sweet basil, extra virgin olive oil, and sea salt on wood-fired crust.",
+    price: 12.99,
+    category: "Pizza",
+    image: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "20-25 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Classic", "Vegetarian"]
+  },
+  {
+    name: "Pepperoni Passion Pizza",
+    description: "Loaded edge-to-edge with artisan cured pepperoni, rich mozzarella blend, and herb-infused tomato sauce.",
+    price: 14.49,
+    category: "Pizza",
+    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "20-25 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Bestseller"]
+  },
+  {
+    name: "Wild Truffle Mushroom Pizza",
+    description: "Roasted wild cremini and shiitake mushrooms, creamy fontina, fresh thyme, and white truffle oil drizzle.",
+    price: 15.99,
+    category: "Pizza",
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "25-30 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Chef Special"]
+  },
+  {
+    name: "BBQ Smoked Chicken Pizza",
+    description: "Tender grilled chicken pieces tossed in smoky barbecue glaze with red onions, cilantro, and smoked gouda.",
+    price: 14.99,
+    category: "Pizza",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    prepTime: "20-25 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Smoky"]
+  },
+
+  // Biryani
+  {
+    name: "Hyderabadi Chicken Dum Biryani",
+    description: "Slow-cooked fragrant basmati rice layered with succulent marinated chicken, saffron, mint, and secret royal aromatic spices. Served with raita and salan.",
+    price: 13.99,
+    category: "Biryani",
+    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "25-30 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Bestseller", "Royal Recipe"]
+  },
+  {
+    name: "Royal Mutton Dum Biryani",
+    description: "Tender chunks of slow-cooked goat meat cooked in clay pots with long grain basmati rice, caramelized onions, and kewra water.",
+    price: 16.49,
+    category: "Biryani",
+    image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "30-35 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Special"]
+  },
+  {
+    name: "Shahi Paneer Dum Biryani",
+    description: "Marinated cottage cheese cubes roasted in tandoor spices, layered with saffron basmati rice, cashews, and golden fried onions.",
+    price: 12.49,
+    category: "Biryani",
+    image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    prepTime: "20-25 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Vegetarian"]
+  },
+  {
+    name: "Coastal Spiced Prawn Biryani",
+    description: "Fresh coastal prawns simmered in aromatic coconut and spice blend, folded into fragrant ghee rice.",
+    price: 15.99,
+    category: "Biryani",
+    image: "https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "25-30 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Seafood Delight"]
+  },
+
+  // Snacks
+  {
+    name: "Crispy Golden Truffle Fries",
+    description: "Double-cooked crispy french fries tossed with parmesan cheese, aromatic black truffle oil, and fresh parsley with garlic aioli dip.",
+    price: 5.99,
+    category: "Snacks",
+    image: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "10-15 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Crispy", "Popular"]
+  },
+  {
+    name: "Loaded Cheesy Nachos Grande",
+    description: "Crispy corn tortilla chips piled high with warm queso, black beans, jalapenos, pico de gallo, guacamole, and sour cream.",
+    price: 7.99,
+    category: "Snacks",
+    image: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    prepTime: "12-15 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Sharing"]
+  },
+  {
+    name: "Fiery Buffalo Chicken Wings",
+    description: "Crispy bone-in chicken wings tossed in fiery red hot buffalo sauce, served with crunchy celery sticks and blue cheese dip.",
+    price: 8.99,
+    category: "Snacks",
+    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "15-20 min",
+    isVeg: false,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Spicy"]
+  },
+  {
+    name: "Tandoori Paneer Tikka Skewers",
+    description: "Chargrilled cottage cheese skewers with bell peppers and onions marinated in spiced Greek yogurt marinade.",
+    price: 7.49,
+    category: "Snacks",
+    image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "15-18 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Vegetarian", "Healthy"]
+  },
+
+  // Desserts
+  {
+    name: "Molten Belgian Chocolate Lava Cake",
+    description: "Warm, rich chocolate cake with a decadent flowing dark chocolate core, dusted with cocoa powder and served with vanilla bean ice cream.",
+    price: 6.99,
+    category: "Desserts",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "10-12 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Sweet Tooth", "Bestseller"]
+  },
+  {
+    name: "Classic Italian Tiramisu",
+    description: "Espresso-soaked savoiardi ladyfingers layered with velvety mascarpone cream and finished with cocoa.",
+    price: 6.49,
+    category: "Desserts",
+    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "5 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Authentic"]
+  },
+  {
+    name: "New York Strawberry Cheesecake",
+    description: "Creamy baked cheesecake on a graham cracker crust, topped with fresh strawberry compote and glazed berries.",
+    price: 7.29,
+    category: "Desserts",
+    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "5 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Creamy"]
+  },
+  {
+    name: "Royal Gulab Jamun Sundae",
+    description: "Warm saffron-soaked gulab jamuns served atop creamy pistachio kulfi ice cream and garnished with silver leaf and roasted almonds.",
+    price: 5.99,
+    category: "Desserts",
+    image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "5-10 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Indian Fusion"]
+  },
+
+  // Drinks
+  {
+    name: "Fresh Mint & Lime Mojito",
+    description: "Crisp and invigorating sparkling mocktail with crushed fresh mint leaves, zesty Persian lime juice, and pure cane sugar syrup.",
+    price: 4.49,
+    category: "Drinks",
+    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80",
+    rating: 4.8,
+    prepTime: "5 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: true,
+    tags: ["Refreshing"]
+  },
+  {
+    name: "Iced Caramel Macchiato",
+    description: "Smooth double shot espresso combined with chilled whole milk, rich vanilla syrup, and drizzled with buttery caramel.",
+    price: 4.99,
+    category: "Drinks",
+    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    prepTime: "5-8 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Coffee"]
+  },
+  {
+    name: "Tropical Mango Passion Smoothie",
+    description: "Blended Alphonso mango pulp, tangy passion fruit juice, Greek yogurt, and crushed ice.",
+    price: 5.49,
+    category: "Drinks",
+    image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=800&q=80",
+    rating: 4.9,
+    prepTime: "5 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: true,
+    tags: ["All Natural"]
+  },
+  {
+    name: "Wild Berry Sparkler",
+    description: "Sparkling soda infused with hand-crushed blueberries, blackberries, raspberries, and a touch of lemon zest.",
+    price: 4.79,
+    category: "Drinks",
+    image: "https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=800&q=80",
+    rating: 4.6,
+    prepTime: "5 min",
+    isVeg: true,
+    inStock: true,
+    isFeatured: false,
+    tags: ["Chilled"]
+  }
+];
+
+module.exports = sampleFoods;
